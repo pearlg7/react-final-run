@@ -4,7 +4,7 @@ const rootSlice = createSlice({
     name: "root",
     initialState: {
         date: "Date",
-        distance: 'Distance',
+        distance: "Distance",
         heart_rate: "Heart Rate",
         pace: "Pace",
     },

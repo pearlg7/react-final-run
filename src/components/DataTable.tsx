@@ -30,7 +30,7 @@ function DataTable() {
         server_calls.delete(selectionModel[0]);
         getData();
         console.log(`Selection model: ${selectionModel}`)
-        setTimeout( () => { window.location.reload() }, 1000)
+        setTimeout( () => { window.location.reload() }, 500)
     }
 
   return (
@@ -52,7 +52,6 @@ function DataTable() {
         <Button onClick={handleOpen}  className="p-3 bg-indigo-300 m-3 rounded hover:bg-indigo-800 hover:text-white" >Update</Button>
         <Button onClick={deleteData} className="p-3 bg-indigo-300 m-3 rounded hover:bg-indigo-800 hover:text-white" >Delete</Button>
      </div>
-     <div>
         <div className={ open ? "hidden" : "container mx-10 my-5 flex flex-col"}
             style={{ height: 400, width: '100%' }}
             >
@@ -60,13 +59,11 @@ function DataTable() {
             <DataGrid rows={runData} columns={columns} rowsPerPageOptions={[5]}
             checkboxSelection={true} 
             onSelectionModelChange={ (item:any) => {
-                setSelectionModel(item)
+              setSelectionModel(item)
             }}
             />
-        </div>
     </div>
     </>
-   
   )
 }
 

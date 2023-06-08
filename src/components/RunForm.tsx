@@ -19,21 +19,19 @@ const Runform = (props:RunFormProps) => {
 
     const onSubmit = (data: any, event: any) => {
         console.log(`ID: ${typeof props.id}`);
-        console.log(props.id);
+        console.log(props.id)
         console.log(data)
         if (props.id && props.id.length > 0) {
           server_calls.update(props.id[0], data)
-          //console.log("test")
-          console.log(`Updated: ${ data.name} ${ props.id }`)
+          console.log(`Updated: ${ data.name } ${ props.id }`)
           setTimeout(() => {window.location.reload()}, 500);
           event.target.reset()
         } else {
-         
           dispatch(chooseDate(data.date));
           dispatch(chooseDistance(data.distance));
           dispatch(chooseHeart(data.heart_rate));
           dispatch(choosePace(data.pace));
-    
+
           server_calls.create(store.getState())
           setTimeout( () => {window.location.reload()}, 500);
         }
@@ -50,7 +48,7 @@ const Runform = (props:RunFormProps) => {
         </div>
          <div>
           <label htmlFor="distance">Distance</label>
-          <Input {...register('distance')}  name='style' placeholder="Distance"/>
+          <Input {...register('distance')}  name='distance' placeholder="Distance"/>
         </div>
         <div>
           <label htmlFor="heart_rate">Heart Rate</label>

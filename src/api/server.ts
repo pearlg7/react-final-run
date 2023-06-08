@@ -2,7 +2,7 @@ const token = 'deb4171b4fdb84285af24ce0137f902f84d2fc18fb5e11ca'
 
 export const server_calls = {
     get: async () => {
-        const response = await fetch(`https://holly-pacific-cress.glitch.me/api/runs`,
+        const response = await fetch(`https://bejewled-temporal-buffer.glitch.me/api/runs`,
         {
             method: 'GET',
             headers: {
@@ -20,7 +20,7 @@ export const server_calls = {
     },
 
     create: async (data: any = {}) => {
-        const response = await fetch(`https://holly-pacific-cress.glitch.me/api/runs`,
+        const response = await fetch(`https://bejewled-temporal-buffer.glitch.me/api/runs`,
         {
             method: "POST",
             headers: {
@@ -38,9 +38,9 @@ export const server_calls = {
     },
 
     update: async (id:string, data: any = {}) => {
-        const response = await fetch(`https://holly-pacific-cress.glitch.me/api/runs/${id}`,
+        const response = await fetch(`https://bejewled-temporal-buffer.glitch.me/api/runs/${id}`,
         {
-            method: "POST",
+            method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
@@ -57,7 +57,7 @@ export const server_calls = {
     },
 
     delete: async (id:string) => {
-        const response = await fetch(`https://holly-pacific-cress.glitch.me/api/runs/${id}`,
+        const response = await fetch(`https://bejewled-temporal-buffer.glitch.me/api/runs/${id}`,
         {  
             method: "DELETE",
             headers: {
